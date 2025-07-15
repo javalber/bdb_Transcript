@@ -1,4 +1,0 @@
-gradio
-openai-whisper
-ffmpeg-python
-torch
