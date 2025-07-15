@@ -1,9 +1,8 @@
 import whisper
 import tempfile
 import ffmpeg
-import os
 
-model = whisper.load_model("medium")
+model = whisper.load_model("base")
 
 def convert_to_wav(input_path: str) -> str:
     output_path = tempfile.mktemp(suffix=".wav")
@@ -18,6 +17,5 @@ def transcribe_audio(file_path: str) -> dict:
 
     return {
         "text": result["text"].strip(),
-        "segments": result["segments"],
-        "language": result.get("language", "unknown")
+        "segments": result["segments"]
     }
